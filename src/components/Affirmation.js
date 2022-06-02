@@ -13,6 +13,22 @@ export default function Affirmation() {
 	
 		setFinalGratitude(true)
 	}
+	const activateMicrophone =  ( )  => {
+
+		console.log('Submit')
+		
+		//Add microphone access
+		navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+			if (!MediaRecorder.isTypeSupported('audio/webm'))
+				return alert('Browser not supported')
+			const mediaRecorder = new MediaRecorder(stream, {
+				mimeType: 'audio/webm',
+			})
+		})
+		//create a websocket connection
+		 
+		}
+		
 return(
     <div className='App'>
 <div>
@@ -40,7 +56,15 @@ return(
 							className='submit-button'
 							disabled={gratitude.length === 0}>
 							Submit
-						</button>{' '}
+						</button>
+
+<button
+	onClick={activateMicrophone}
+	type='button'
+	className='submit-button'>
+	Voice 💬
+</button>
+
 					</form>
 				</>
 			) : (
