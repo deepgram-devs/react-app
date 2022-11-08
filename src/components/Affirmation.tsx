@@ -4,12 +4,17 @@ import { useState, useRef } from 'react'
 export default function Affirmation() {
     const [affirmation, setAffirmation] = useState('')
 	const [finalAffirmation, setFinalAffirmation] = useState(false)
-	const socketRef = useRef(null)
+	const socketRef = useRef<WebSocket | null>(null);
 
-	const handleChange = (e) => {
+	const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> 
+	= (e) => {
 		setAffirmation(e.target.value)
 	}
-    const handleSubmit = (e) => {
+
+	/* submit is a form event */
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+		/* prevent page from refreshing */
 		e.preventDefault()
 	
 		setFinalAffirmation(true)
@@ -54,7 +59,7 @@ export default function Affirmation() {
 			socket.onerror = (error) => {
 				console.log({ event: 'onerror', error })
 			}
-
+console.log(socket)
 			socketRef.current = socket
 		})
 		}
