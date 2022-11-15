@@ -9,3 +9,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Run `npm i` in your terminal
 - Run `npm run start` in your terminal
 - Run `node server/server.js` in your terminal
+

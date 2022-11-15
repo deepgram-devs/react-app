@@ -13,10 +13,8 @@ export default function Affirmation() {
 
 	/* submit is a form event */
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-
 		/* prevent page from refreshing */
 		e.preventDefault()
-	
 		setFinalAffirmation(true)
 	}
 	const activateMicrophone =  ( )  => {
