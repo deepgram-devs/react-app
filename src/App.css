@@ -76,6 +76,9 @@ body {
 
 .submit-button {
     grid-area: 4 / 3 / 5 / 4;
+    margin: 5px;
+    height: 6vh;
+    width: 16vw;
 }
 
 .description {
