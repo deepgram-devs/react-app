@@ -24,16 +24,15 @@ describe('affirmation app', () => {
       .should('exist', 'be.disabled')
       cy.findByRole('button', {name: "Voice 💬"}).should('exist') 
     })
-//     it('accepts text and submits', () => {
-// cy.findByRole('textbox').click().type('I am awesome')
+it('accepts text and submits', () => {
+cy.findByRole('textbox').click().type('I am awesome')
 
-// cy.findByText('I am awesome').should('be.visible')
+cy.findByText('I am awesome').should('be.visible')
 
-// cy.findByRole('button', {name: /Submit/i}).click()
+cy.findByRole('button', {name: /Submit/i}).click()
 
-// cy.get('h2').contains('Today\'s Entry' )
+cy.get('h2').contains('Today\'s Entry' )
 
-
-// cy.findByText('I am awesome').should('be.visible')
-//     })
+cy.findByText('I am awesome').should('be.visible')
+    })
 })
